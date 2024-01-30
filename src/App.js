@@ -1,40 +1,149 @@
-import React from 'react'
-import Button from '@mui/material/Button';
-import DeleteIcon from '@mui/icons-material/Delete';
-import { IconButton } from '@mui/material';
+import React from "react";
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
+import EditIcon from "@mui/icons-material/Edit";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
+import NavigationIcon from "@mui/icons-material/Navigation";
+import Button from "@mui/material/Button";
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import DeleteIcon from "@mui/icons-material/Delete";
+import { ButtonGroup, Checkbox, FormControlLabel, IconButton } from "@mui/material";
+import { pink } from "@mui/material/colors";
+import Rating from '@mui/material/Rating';
+import Slider from '@mui/material/Slider';
 
 const App = () => {
   return (
     <>
       <h1>Text Button</h1>
-      <Button variant="text"  >Click me</Button>
-      <Button color='secondary'>secondary</Button>
-      <Button color='primary' href='http://www.google.com'>Link</Button>
+      <Button variant="text">Click me</Button>
+      <Button color="secondary">secondary</Button>
+      <Button color="primary" href="http://www.google.com">
+        Link
+      </Button>
       <Button disabled>Disabled</Button>
       <h1>contained Button</h1>
-      <Button variant='contained' size='large'>Click Me</Button>
-      <Button variant='contained' color='secondary'>Click Me</Button>
-      <Button variant='contained' color='primary' href='http://www.google.com'>Click Me</Button>
-      <Button variant='contained' color='primary' disabled>Click Me</Button>
+      <Button variant="contained" size="large">
+        Click Me
+      </Button>
+      <Button variant="contained" color="secondary">
+        Click Me
+      </Button>
+      <Button variant="contained" color="primary" href="http://www.google.com">
+        Click Me
+      </Button>
+      <Button variant="contained" color="primary" disabled>
+        Click Me
+      </Button>
       <h1>outlined Button</h1>
-      <Button variant='outlined'>Click Me</Button>
-      <Button variant='outlined' color='secondary'>Click Me</Button>
-      <Button variant='outlined' color='primary' href='http://www.google.com'>Click Me</Button>
-      <Button variant='outlined' color='primary' disabled>Click Me</Button>
+      <Button variant="outlined">Click Me</Button>
+      <Button variant="outlined" color="secondary">
+        Click Me
+      </Button>
+      <Button variant="outlined" color="primary" href="http://www.google.com">
+        Click Me
+      </Button>
+      <Button variant="outlined" color="primary" disabled>
+        Click Me
+      </Button>
       <h1>Button with icon</h1>
-      <Button variant='contained' color='secondary' startIcon={<DeleteIcon/>} >Delete</Button>
-      <Button variant='contained'  endIcon={<DeleteIcon/>} color='warning' >Delete</Button>
+      <Button variant="contained" color="secondary" startIcon={<DeleteIcon />}>
+        Delete
+      </Button>
+      <Button variant="contained" endIcon={<DeleteIcon />} color="warning">
+        Delete
+      </Button>
       <h1>Button icons</h1>
-      <IconButton color='secondary'>
-        <DeleteIcon/>
+      <IconButton color="secondary">
+        <DeleteIcon />
       </IconButton>
       <h1>Custom Buttons</h1>
-      <Button variant='contained' style={{backgroundColor:'green'}}>custom1</Button>
-      <Button variant='contained' sx={{backgroundColor:'red'}}>custom2</Button>
+      <Button variant="contained" style={{ backgroundColor: "green" }}>
+        custom1
+      </Button>
+      <Button variant="contained" sx={{ backgroundColor: "red" }}>
+        custom2
+      </Button>
       <h1>Button with Click Event</h1>
-      <Button variant='contained' onClick={()=>{alert('clicked')}} >Click Me</Button>
-    
-   </>
+      <Button
+        variant="contained"
+        onClick={() => {
+          alert("clicked");
+        }}
+      >
+        Click Me
+      </Button>
+      <h1>Button group</h1>
+      <ButtonGroup variant="contained" color="secondary">
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+      <h1>Vertical Button group</h1>
+      <ButtonGroup variant="contained" color="secondary" orientation="vertical">
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+      <h1>Floating Action Button</h1>
+      <Fab color="error">R</Fab>
+      <Fab color="success">
+        <AddIcon />
+      </Fab>
+      <Fab color="warning">
+        <EditIcon />
+      </Fab>
+      <Fab color="info" variant="extended">
+        <NavigationIcon />
+        Navigate
+      </Fab>
+      <Fab color="primary">
+        <FavoriteIcon />
+      </Fab>
+      <h1>CheckBox</h1>
+      <Checkbox
+        defaultChecked
+        sx={{
+          color: pink[800],
+          "&.Mui-checked": {
+            color: pink[600],
+          },
+        }}
+      />
+      <Checkbox checked={false} />
+      <Checkbox indeterminate />
+      <Checkbox
+        icon={<FavoriteBorder />}
+        checkedIcon={<FavoriteIcon />}
+        sx={{ color: "red" }}
+      />
+      <Checkbox onChange={()=>{console.log('checked done')}}/>
+      <FormControlLabel control={<checkBox/>} label='India'/>
+      <FormControlLabel control={<checkBox/>} label='Bottom'labelPlacement='bottom'/>
+      <h1>Radio Buttons</h1>
+      <Radio value='male' name="radio-button"/>
+      <Radio value='female' name="radio-button"/>
+      <FormControlLabel control={<Radio/>} label='Female' labelPlacement="top"/>
+      <FormControlLabel control={<Radio/>} label='Female' labelPlacement="end"/>
+      <FormControlLabel control={<Radio/>} label='Female' labelPlacement="bottom"/>
+      <FormControlLabel control={<Radio/>} label='Female' labelPlacement="start"/>
+     <RadioGroup row>
+     <FormControlLabel control={<Radio/>} label='Male' value='male' />
+     <FormControlLabel control={<Radio/>} label='Female' value='female'/>
+     <FormControlLabel control={<Radio/>} label='Other' value='other'/>
+     </RadioGroup>
+     <h1>Rating</h1>
+     <Rating />
+     <br />
+     <Rating value={3} readOnly />
+     <Rating value={3} defaultValue={2.5} precision={0.5} />
+     <h1>Slider</h1>
+     <Slider value={5}/>
+     <Slider defaultValue={30}/>
+
+</>
   )
 }
 
