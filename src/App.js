@@ -6,13 +6,22 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import NavigationIcon from "@mui/icons-material/Navigation";
 import Button from "@mui/material/Button";
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { ButtonGroup, Checkbox, FormControlLabel, IconButton } from "@mui/material";
+import {
+  ButtonGroup,
+  Checkbox,
+  FormControlLabel,
+  IconButton,
+  TextField,
+} from "@mui/material";
 import { pink } from "@mui/material/colors";
-import Rating from '@mui/material/Rating';
-import Slider from '@mui/material/Slider';
+import Rating from "@mui/material/Rating";
+import Slider from "@mui/material/Slider";
+import Box from "@mui/material/Box";
+import Switch from "@mui/material/Switch";
+import Stack from "@mui/material/Stack";
 
 const App = () => {
   return (
@@ -119,32 +128,97 @@ const App = () => {
         checkedIcon={<FavoriteIcon />}
         sx={{ color: "red" }}
       />
-      <Checkbox onChange={()=>{console.log('checked done')}}/>
-      <FormControlLabel control={<checkBox/>} label='India'/>
-      <FormControlLabel control={<checkBox/>} label='Bottom'labelPlacement='bottom'/>
+      <Checkbox
+        onChange={() => {
+          console.log("checked done");
+        }}
+      />
+      <FormControlLabel control={<checkBox />} label="India" />
+      <FormControlLabel
+        control={<checkBox />}
+        label="Bottom"
+        labelPlacement="bottom"
+      />
       <h1>Radio Buttons</h1>
-      <Radio value='male' name="radio-button"/>
-      <Radio value='female' name="radio-button"/>
-      <FormControlLabel control={<Radio/>} label='Female' labelPlacement="top"/>
-      <FormControlLabel control={<Radio/>} label='Female' labelPlacement="end"/>
-      <FormControlLabel control={<Radio/>} label='Female' labelPlacement="bottom"/>
-      <FormControlLabel control={<Radio/>} label='Female' labelPlacement="start"/>
-     <RadioGroup row>
-     <FormControlLabel control={<Radio/>} label='Male' value='male' />
-     <FormControlLabel control={<Radio/>} label='Female' value='female'/>
-     <FormControlLabel control={<Radio/>} label='Other' value='other'/>
-     </RadioGroup>
-     <h1>Rating</h1>
-     <Rating />
-     <br />
-     <Rating value={3} readOnly />
-     <Rating value={3} defaultValue={2.5} precision={0.5} />
-     <h1>Slider</h1>
-     <Slider value={5}/>
-     <Slider defaultValue={30}/>
-
-</>
-  )
-}
+      <Radio value="male" name="radio-button" />
+      <Radio value="female" name="radio-button" />
+      <FormControlLabel
+        control={<Radio />}
+        label="Female"
+        labelPlacement="top"
+      />
+      <FormControlLabel
+        control={<Radio />}
+        label="Female"
+        labelPlacement="end"
+      />
+      <FormControlLabel
+        control={<Radio />}
+        label="Female"
+        labelPlacement="bottom"
+      />
+      <FormControlLabel
+        control={<Radio />}
+        label="Female"
+        labelPlacement="start"
+      />
+      <RadioGroup row>
+        <FormControlLabel control={<Radio />} label="Male" value="male" />
+        <FormControlLabel control={<Radio />} label="Female" value="female" />
+        <FormControlLabel control={<Radio />} label="Other" value="other" />
+      </RadioGroup>
+      <h1>Rating</h1>
+      <Rating />
+      <br />
+      <Rating value={3} readOnly />
+      <Rating value={3} defaultValue={2.5} precision={0.5} />
+      <h1>Slider</h1>
+      <Slider value={5} />
+      <Slider defaultValue={30} />
+      <Box sx={{ height: "200px" }}>
+        <Slider orientation="vertical" defaultValue={10} color="secondary" />
+      </Box>
+      <h1>switch</h1>
+      <Switch />
+      <Switch defaultChecked />
+      <Switch disabled />
+      <FormControlLabel control={<Switch />} label="dark" />
+      <h1>Text</h1>
+      <TextField label="Name" />
+      <TextField label="standard" variant="standard" />
+      <TextField label="outlined" variant="outlined" />
+      <TextField label="filled" variant="filled" />
+      <h1>Box</h1>
+      <Box
+        sx={{ width: "100px", height: "50px", backgroundColor: "lightblue" }}
+      >
+        Hello
+      </Box>
+      <h1>stack</h1>
+      <Stack spacing={5} direction='row'>
+        <Button variant="contained">Click me</Button>
+        <Button variant="contained" color="secondary">secondary</Button>
+        <Button variant="contained" color="primary" href="http://www.google.com">
+          Link
+        </Button>
+        <Button disabled>Disabled</Button>
+      </Stack>
+      <h1>This are the System key/props</h1>
+        <h1>Alignment</h1>
+        <Box sx={{textAlign:'left'}}>Hello</Box>
+        <Box sx={{textAlign:'centre'}}>Hello</Box>
+        <Box sx={{textAlign:'right'}}>Hello</Box> 
+        <h1>Font Weight</h1>
+        <Box fontWeight='bold'>Hello300</Box>
+        <Box fontWeight={500}>Hello500</Box> 
+        <h1>font size</h1>
+        <Box fontSize={24}>Hello</Box>
+        <Box fontSize={34} >Hello</Box> 
+        <h1>font style</h1>
+        <Box fontStyl={24}>Hello</Box>
+        <Box fontSize={34} >Hello</Box> 
+    </>
+  );
+};
 
 export default App;
