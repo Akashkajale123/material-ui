@@ -13,12 +13,21 @@ import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
 import Badge from '@mui/material/Badge';
 import MailIcon from '@mui/icons-material/Mail';
+import CommentIcon from '@mui/icons-material/Comment';
+
 import {
   ButtonGroup,
   Checkbox,
+  Divider,
   FormControlLabel,
   IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
   TextField,
+  Tooltip,
+  Typography,
 } from "@mui/material";
 import { pink } from "@mui/material/colors";
 import Rating from "@mui/material/Rating";
@@ -26,6 +35,14 @@ import Slider from "@mui/material/Slider";
 import Box from "@mui/material/Box";
 import Switch from "@mui/material/Switch";
 import Stack from "@mui/material/Stack";
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Alert from '@mui/material/Alert';
+import CheckIcon from '@mui/icons-material/Check';
 
 const App = () => {
   return (
@@ -294,6 +311,72 @@ const App = () => {
     <Badge badgeContent={4} color="primary">
       <MailIcon color="action" />
     </Badge>
+    <h1>Divider</h1>
+    <Divider orientation="vertical"/>
+    <Divider>Center</Divider>
+    <Divider textAlign="left">Left</Divider>
+    <h1>List</h1>
+    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+      {[1, 2, 3].map((value) => (
+        <ListItem
+          key={value}
+          disableGutters
+          secondaryAction={
+            <IconButton aria-label="comment">
+              <CommentIcon />
+            </IconButton>
+          }
+        >
+          <ListItemText primary={`Line item ${value}`} />
+        </ListItem>
+      ))}
+    </List>
+    <h1>Table</h1>
+   <TableContainer>
+    <Table>
+      <TableHead>
+        <TableRow>
+          <TableCell>No</TableCell>
+          <TableCell align="right">Name</TableCell>
+          <TableCell align="right">Roll_No</TableCell>
+          <TableCell align="right">Class</TableCell>
+          <TableCell align="right">Subject</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableCell component='th' scope='row'>1</TableCell>
+          <TableCell align="right">Akash</TableCell>
+          <TableCell align="right">101</TableCell>
+          <TableCell align="right">12th</TableCell>
+          <TableCell align="right">Science</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+   </TableContainer>
+   <h1>Tool Tip</h1>
+   <Tooltip title='Delete'>
+    <IconButton aria-label="delete">
+      <DeleteIcon/>
+    </IconButton>
+   </Tooltip>
+   <h1>Typography</h1>
+   <Typography variant="h1">Typography</Typography>
+   <Typography variant="h2">Typography</Typography>
+   <Typography variant="h3">Typography</Typography>
+   <Typography variant="h4">Typography</Typography>
+   <Typography variant="h5">Typography</Typography>
+   <Typography variant="h6">Typography</Typography>
+   <h1>Alert</h1>
+   <Alert icon={<CheckIcon fontSize="inherit" />} severity="success">
+      Here is a gentle confirmation that your action was successful.
+    </Alert>
+    <Stack sx={{ width: '100%' }} spacing={2}>
+      <Alert severity="success">This is a success Alert.</Alert>
+      <Alert severity="info">This is an info Alert.</Alert>
+      <Alert severity="warning">This is a warning Alert.</Alert>
+      <Alert severity="error">This is an error Alert.</Alert>
+    </Stack>
     </>
   );
 };
