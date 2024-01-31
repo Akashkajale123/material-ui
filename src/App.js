@@ -9,6 +9,10 @@ import Button from "@mui/material/Button";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import DeleteIcon from "@mui/icons-material/Delete";
+import Avatar from '@mui/material/Avatar';
+import AvatarGroup from '@mui/material/AvatarGroup';
+import Badge from '@mui/material/Badge';
+import MailIcon from '@mui/icons-material/Mail';
 import {
   ButtonGroup,
   Checkbox,
@@ -217,6 +221,79 @@ const App = () => {
         <h1>font style</h1>
         <Box fontStyl={24}>Hello</Box>
         <Box fontSize={34} >Hello</Box> 
+        <Box fontStyle='italic' >Hello</Box> 
+        <h1>color</h1>
+        <Box bgcolor='primary.light'>color1</Box>
+        <Box bgcolor='secondary.main'>color2</Box>
+        <Box bgcolor='error.main'>color3</Box>
+        <Box color='info.main'>color4</Box>
+        <Box color='success.main'>color5</Box>
+
+        <h1>margin</h1>
+        <Box m={10}>All side margin</Box>
+        <Box mt={10}>margin top</Box>
+        <Box mb={10}>margin bottom</Box>
+        <Box ml={10}>margin left</Box>
+        <Box mr={10}>margin right</Box>
+        <Box mx={10}>margin left right</Box>
+        <Box my={10}>margin Top Bottom</Box>
+
+        <h1>padding</h1>
+        <Box p={10}>All side padding</Box>
+        <Box pt={10}>padding top</Box>
+        <Box pb={10}>padding bottom</Box>
+        <Box pl={10}>padding left</Box>
+        <Box pr={10}>padding right</Box>
+        <Box px={10}>padding left right</Box>
+        <Box py={10}>padding Top Bottom</Box>
+
+        <h1>width sizing</h1>
+        <Box width={1/4} bgcolor='red'>width 1/4</Box>
+        <Box width={1} bgcolor='blue'>width 1</Box>
+        <Box width='50%' bgcolor='orange'>width 50%</Box>
+        <Box width={500} bgcolor='pink'>width 500px</Box>
+
+        <h1>Height Sizing</h1>
+        <Box height='50%' bgcolor='pink'>height 50%</Box>
+        {/* <Box height={500} bgcolor='green'> */}
+        <h1>Border</h1>
+     <Stack spacing={5}>
+     <Box border={1} >hello</Box>
+        <Box borderTop={1} >hello</Box>
+        <Box borderBottom={1} >hello</Box>
+        <Box borderLeft={1} >hello</Box>
+        <Box borderRight={1} >hello</Box>
+     </Stack>
+
+     <Stack spacing={5}>
+     <Box border={0} >hello</Box>
+        <Box border={1} borderTop={0} >hello</Box>
+        <Box border={1} borderBottom={0} >hello</Box>
+        <Box border={1} borderLeft={0} >hello</Box>
+        <Box border={1} borderRight={0} >hello</Box>
+     </Stack>
+     
+     <h1>Border color</h1>
+     <Box  border={1} borderColor='secondary.main'>Hello</Box>
+
+     <h1>Border radius</h1>
+     <Box  border={1} borderColor='secondary.main' borderRadius='50%' width={300} height={300}>Hello</Box>
+
+      <h1>Avatar</h1>  
+      <Avatar src='https://cdn.pixabay.com/photo/2016/11/18/23/38/child-1837375_640.png'>H</Avatar>
+     <Box  mt={5}> <Avatar><DeleteIcon/></Avatar></Box>
+     <h1>Avatar group</h1>
+     <AvatarGroup max={4}>
+      <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+      <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+      <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+      <Avatar alt="Agnes Walker" src="/static/images/avatar/4.jpg" />
+      <Avatar alt="Trevor Henderson" src="/static/images/avatar/5.jpg" />
+    </AvatarGroup>
+    <h1>Badges</h1>
+    <Badge badgeContent={4} color="primary">
+      <MailIcon color="action" />
+    </Badge>
     </>
   );
 };
